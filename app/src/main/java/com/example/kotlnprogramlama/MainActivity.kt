@@ -1,7 +1,9 @@
 package com.example.kotlnprogramlama
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -9,36 +11,39 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
+
         //Kotlin yazdırma
         println("Hello World!")
 
-
-
         println("Merhaba Kotlin")
         println(5 * 10)
-
         /* Değişkenler */
         val a = 5
         val b = 10
-        print(a * b)
+        println(a * b)
 
         var yas = 50
         println(yas / 5 * 8)
+
         yas = 60
         println(yas / 5 * 8)
+
 
         /*Sabitler */
         //Değişkenler var sabit val
         val pi = 3.14
         println(pi)
 
+
         val x = 5
         val y = 20
-        println(x + y)
+        println(x * y)
+
+
 
         println(yas)
+        println(yas * 45 )
         println(yas * x)
-
         //camelCase
         //snake_case
 
@@ -46,13 +51,14 @@ class MainActivity : AppCompatActivity() {
         val yasSonucu = yas * x
         println(yasSonucu)
 
+
         // Integer
         println("---Integer----")
-
         //Tanımlama(Defining)
         val benimIntegerim : Int
+
         // Başlatma, Değerini Atama (Initializin,Initilazation)
-        benimIntegerim = 10
+        benimIntegerim = 35
 
         val yeniInteger: Int = 20
 
@@ -67,40 +73,50 @@ class MainActivity : AppCompatActivity() {
         //Double & float
         println("----Double & Float ----")
 
+
         val floatPi : Float = 3.14f
+
         println(floatPi)
 
         val yeniDouble : Double = 5.0
+        println(yeniDouble)
 
         //String
         println("---String----")
         val isim = "Selim"
+
         val soyisim = "Çınar"
+
         val tamisim = isim +" "+soyisim
         println(tamisim)
 
-        val yeniBirString : String
-        yeniBirString = "10"
 
+
+
+        val yeniBirString : String
+
+        yeniBirString = "10"
         val baskaBirString = "20"
 
         println(yeniBirString + baskaBirString)
-
         //Boolean
         println("---Boolean----")
-        var benimBoolean = true
+        var benimBoolean :Boolean =  true
+
         benimBoolean = false
         /*
         <,>,==,!=,<=,>=,&& ve , || veya
         */
         println(3<5)
         println(4!=4)
-
+        println(4<= 6 && 5<=7 )
+        println(4>= 4 && 4>=6)
         //Veri Tipi Dönüştürme
         println("---Dönüştürme----")
         val benimInt = 10
         val benimLongaCevrilenInt = benimInt.toLong()
         println(benimLongaCevrilenInt)
+
 
         val kullaniciGirdisi = "50"
         val kullaniciInt = kullaniciGirdisi.toInt()
@@ -108,7 +124,10 @@ class MainActivity : AppCompatActivity() {
 
         //Diziler
         println("--Dizi---")
+
         val stringOrnegi = "Atıl"
+
+
         val benimDizim = arrayOf(stringOrnegi,"Samancıoğlu","46","Kerem")
         println(benimDizim[0])
         println(benimDizim.get(1))
@@ -122,24 +141,37 @@ class MainActivity : AppCompatActivity() {
         println(numaraDizisi.get(2))
 
         val karisikDizi = arrayOf("Atıl",24,16.5,true,false)
+
+
         println(karisikDizi.get(3))
 
         //ArrayList - Listeler
 
         println("-----ArrayList------")
+        println("-----ArrayList-----")
+        println("-----ArrayList-----")
+        println("-----ArrayList-----")
+        println("-----ArrayList----")
+
+
 
         val isimListesi = arrayListOf <String>() /*İnternetten veri çekerken boş liste işe yarar*/
         val isimListesi2 = arrayListOf<String>("ATIL","46","OSMAN")
 
+
         println(isimListesi2[0])
         println(isimListesi2.get(2))
+
+
 
         isimListesi2.add("Mehmet")
         isimListesi2.add("Atlas")
         println(isimListesi2.get(4))
 
 
-        val karisikArrayList = arrayListOf<Any>()    /*Herhangi bir değer internetten alınabilir.*/
+        val karisikArrayList = arrayListOf<Any>()
+
+        /*Herhangi bir değer internetten alınabilir.*/
         karisikArrayList.add("Selim")
         karisikArrayList.add(5)
         karisikArrayList.add(true)
@@ -148,6 +180,7 @@ class MainActivity : AppCompatActivity() {
         intArrayList.add(5)
         intArrayList.add(20)
         println(intArrayList.get(1))
+
 
         // Set tekil veri bir veri tekrar eden veriler gözükmez
         println("-----Set-----")
@@ -159,11 +192,13 @@ class MainActivity : AppCompatActivity() {
 
         val benimSet = setOf<Int>(7,8,9,9,9,8,10)
         println(benimSet.size)
+        println(benimSet.size)
 
         //For Each her biri için
         benimSet.forEach{
             println(it)
         }
+
         val digerSet = HashSet<String>()
         digerSet.add("Atıl")
         digerSet.add("Atıl")
@@ -181,21 +216,26 @@ class MainActivity : AppCompatActivity() {
         //ornek kalori --yemek eşleşmesi yapımında kullanılır
 
         val yemekDizisi = arrayOf("Elma","Et","Tavuk")
+
+
         val kaloriDizisi = arrayOf(100,300,200)
+
 
         println("${yemekDizisi[0]}'ın kalorisi: ${kaloriDizisi[0]}")
         println("${yemekDizisi[1]}'ın kalorisi: ${kaloriDizisi[1]}")
         println("${yemekDizisi[2]}'ın kalorisi: ${kaloriDizisi[2]}")
 
         val yemekKaloriMap = hashMapOf<String,Int>()
+        
+
         yemekKaloriMap.put("Elma",100)
         yemekKaloriMap.put("Et",300)
         yemekKaloriMap.put("Tavuk",200)
 
         println(yemekKaloriMap.get("Et"))
-
-
+        
         val benimMapim = HashMap<String,String>()
+
         benimMapim.put("Örnek","Değer")
 
         val yeniMap = hashMapOf<String,Int>("Atıl" to 40 ,"Örnek" to 50)
@@ -217,6 +257,7 @@ class MainActivity : AppCompatActivity() {
         // &&-> VE
         //|| -> VEYA
 
+
         println(digerSayi> sayi && 2>3)
         println(digerSayi> sayi || 2>3)
 
@@ -229,8 +270,10 @@ class MainActivity : AppCompatActivity() {
         println(10%2)
         println(11%3)
 
+
         // if-else kontrolleri
         println("-----If Statements (Eğer Kontrolleri)----")
+
         val skor = 10
         if (skor<10){
             println("Oyunu kaybettin!")
@@ -247,6 +290,11 @@ class MainActivity : AppCompatActivity() {
 
         //When (ne zaman)Şuysa bunu yap -Switch fazla else if varsa bunu kullan
         println("-----When------")
+
+
+
+
+
 
         var notRakami = 0
         var notStringi=""
@@ -283,10 +331,15 @@ class MainActivity : AppCompatActivity() {
         println("----For Döngüsü -----")
         /*Diziler ve koleksiyonlarla beraber kullanılabilir*/
         val baskaBirDizi1 = arrayOf(5,10,15,20,25,30)
+
+
         val q = baskaBirDizi1[0] / 5 + 3
         println(q)
 
         println("Döngü başladı")
+
+
+
         for (numara in baskaBirDizi1){
             println(numara / 5 + 3)
         }
@@ -294,11 +347,16 @@ class MainActivity : AppCompatActivity() {
 
         for (indeks in baskaBirDizi1.indices) /*geçerli indeksleri ver*/
         {
-            println(baskaBirDizi1[indeks /5 +3])
+            println(baskaBirDizi1[indeks] /5 +3)
         }
-        for (b in 0..9) { /*range fonksiyon yazımı*/
-            println(b)
-        }
+
+
+
+        for (b in 0..9)  /*range fonksiyon yazımı*/
+            {
+                println(b)
+            }
+
 
         val benimDigerStringDizim = ArrayList <String>()
         benimDigerStringDizim.add("Atıl")
@@ -311,6 +369,9 @@ class MainActivity : AppCompatActivity() {
             println(it)
         }
 
+
+
+
         /*While şu olduğu sürece yap*/
         print("---While Döngüsü----")
 
@@ -319,6 +380,9 @@ class MainActivity : AppCompatActivity() {
             println(j)
             j = j+1
         }
+
+
+
 
 
 
@@ -411,4 +475,10 @@ class MainActivity : AppCompatActivity() {
             println(birthdayGreeting4("Rex", 2))
         }
     }
+
+    fun Degistir(view : View){ // diğer aktiviteye geçiş kodu
+        val intent= Intent (applicationContext,MainActivity2::class.java)
+        startActivity(intent)
+    }
+
 }
